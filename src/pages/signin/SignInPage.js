@@ -38,6 +38,7 @@ class SignInPage extends Component {
     const { username, password } = this.state;
 
     try {
+      console.log('signin', username, password,{process});
       await this.props.userStore.signin(username, password);
       window.location.hash = '/tasks';
     } catch (error) {
