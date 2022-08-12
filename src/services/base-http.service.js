@@ -9,6 +9,7 @@ export default class BaseHttpService {
   }
 
   async get(endpoint, options = {}) {
+    console.log({process});
     Object.assign(options, this._getCommonOptions());
     return axios.get(`${this.BASE_URL}/${endpoint}`, options)
       .catch(error => this._handleHttpError(error));
